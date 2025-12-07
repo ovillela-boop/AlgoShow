@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Algorithm Visualizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>AlgoShow</h1>
+    <p>*Visualize Speed and Size of Algorithms*</p>
+    <p>*Buttons are disabled when algorithm is processing*</p>
+  </header>
+
+  <main class="main">
+    <!-- Controls -->
+    <!-- Always Visible -->
+<section class="top-controls" id="top-controls">
+  <div class="control-group">
+    <label for="algorithm-select">Algorithm:</label>
+    <select id="algorithm-select">
+      <option value="bubble">Bubble Sort</option>
+      <option value="binary">Binary Search</option>
+      <option value="bfs">Breadth-First Search (Graph)</option>
+    </select>
+  </div>
+</section>
+
+<!-- Hide This When BFS Is Selected -->
+<section class="controls" id="control-panel">
+    <!-- sliders, generate button, visualize button, toggle sorted button -->
+
+
+<!-- Arrazy Size Container -->
+      <div class="control-group">
+        <label for="array-size">Array Size: <span id="array-size-label">30</span></label>
+        <input type="range" id="array-size" min="5" max="80" value="30" />
+      </div>
+<!-- Speed container -->
+      <div class="control-group">
+        <label for="speed">Speed (ms per step): <span id="speed-label">100</span></label>
+        <input type="range" id="speed" min="10" max="10000" value="100" />
+      </div>
+      
+<!-- Buttons Container -->
+      <div class="buttons">
+        <button id="generate">Generate New Array</button>
+        <button id="visualize">Visualize</button>
+      </div>
+    </section>
+    </section>
+<!-- Visualizers -->
+ <!-- Bar Visualizer -->
+    <section class="visualizer">
+      <div id="array-container" class="array-container"></div>
+    </section>
+    <!-- Graph Visualizer -->
+    <section id="graph-section" class="graph-visualizer" style="display: none;">
+  <h3 style="text-align:center; margin-bottom:0.5rem;">Graph Visualization</h3>
+
+  <canvas id="graphCanvas" width="600" height="400"></canvas>
+
+  <div style="text-align:center; margin-top:1rem;">
+    <button id="runGraphAlgo">Run Algorithm</button>
+    <div id="bfs-queue-box" style="
+    margin-top: 15px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+">
+    Queue: <span id="bfs-queue">[]</span>
+</div>
+  </div>
+  
+</section>
+
+    
+  </main>
+
+
+  <footer class="footer">
+    <p>
+      
+    </p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
